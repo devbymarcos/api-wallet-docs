@@ -16,14 +16,7 @@ Portanto, toda movimentação de `Receita` ou `Despesa` precisa incluir um `wall
 
 Endpoints
 
-<ul>
-    <li>
-        <a href="/user">/User</a>
-    </li>
-    <li>
-        <a href="#login">/Login</a>
-    </li>
-</ul>
+- [User](docs/user.md)
 
 ### URL BASE
 
