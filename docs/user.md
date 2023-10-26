@@ -68,12 +68,47 @@ Tipo: `application/json`
 ```
 {
   "id": 1,
-  "first_name": "Marcos",
-  "last_name": "Juvencio",
-  "email": "marcoslopes.dev@gmail.com",
+  "first_name": "Pessoa",
+  "last_name": "Sobrenome",
+  "email": "Pessoa@gmail.com",
   "photo": "default"
 }
 
 ```
 
-<a id="login"></a>
+## `PUT: /user`
+
+Atualiza informação do usuário registrado.
+a `password` só vai ser atualizado se voce enviar.
+
+EXEMPLO :
+
+```
+{
+
+  "first_name": "NovoNome",
+  "last_name": "NovoSobreNome",
+  "email": "NovoEmail@gmail.com",
+  "photo": "default"
+  "password": "NovaSenha
+}
+```
+
+## Response :
+
+Se tudo correr bem você tera um `json` com dados atualizados
+
+Code `200` description `ok`
+
+Tipo: `application/json`
+
+```
+{
+  "id": 1,
+  "first_name": "Pessoa",
+  "last_name": "Sobrenome",
+  "email": "Pessoa@gmail.com",
+  "photo": "default"
+}
+
+```
