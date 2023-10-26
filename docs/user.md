@@ -1,6 +1,6 @@
 # User
 
-<a href="/inicio">SUMÁRIO</a>
+[Summário](/README.md)
 
 ## `POST: /user`
 
