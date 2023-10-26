@@ -1,6 +1,6 @@
 # User
 
-[Summário](/README.md)
+[Sumário](/README.md)
 
 ## `POST: /user`
 
