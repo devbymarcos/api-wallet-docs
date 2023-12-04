@@ -15,6 +15,7 @@ Portanto, toda movimentação de `Receita` ou `Despesa` precisa incluir um `wall
 Endpoints
 
 - [User](docs/user.md)
+- [Wallet](docs/wallet.md)
 
 ### URL BASE
 
