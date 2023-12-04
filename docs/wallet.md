@@ -3,18 +3,10 @@
 [Sumário](/README.md)
 
 
-## `GET: /wallet`
+## `GET: /wallets`
 
-Busca o usuário cadastrado baseado no seu id.
-Nesse caso só é necessario o envio do token junto da requisição no cabeçalho
+Retorna todas as carteiras para o usuário logado
 
-EXEMPLO :
-
-```
-{
-  "Authorizarion": Bearer <seutoken aqui>,
-}
-```
 
 ## Response :
 
@@ -26,14 +18,64 @@ Tipo: `application/json`
 
 ```
 {
-  "id": 1,
-  "first_name": "Pessoa",
-  "last_name": "Sobrenome",
-  "email": "Pessoa@gmail.com",
-  "photo": "default"
+  "wallets": [
+    {
+      "description": "cartão de crédito",
+      "name": "Mercado card - Cartão"
+    },
+    {
+      "description": "Despesas com cartão",
+      "name": "card-card"
+    },
+    {
+      "description": "cartao",
+      "name": "card-banks"
+    }
+  ]
 }
 
 ```
+
+ou
+
+```
+{
+  "data": null,
+  "message": "não encontramos o resgistro "
+}
+
+```
+## `GET: /wallet/{id}`
+
+Retorna carteira para o id do parametro
+
+
+Você pode obter as seguintes respostas
+
+Code `200` description `ok`
+
+Tipo: `application/json`
+
+```
+{
+  "wallet": {
+    "description": "cartão de crédito",
+    "name": "bancoX - Cartão",
+    "option_wallet": 0
+  }
+} 
+
+```
+ou
+
+```
+{
+  "data": null,
+  "message": "não encontramos o resgistro "
+}
+
+```
+
 ## `POST: /wallet`
 
 Cria uma nova carteira

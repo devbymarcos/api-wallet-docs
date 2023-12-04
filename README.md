@@ -2,13 +2,14 @@
 
 WC é um controlador financeiro para gerenciar despesas e receitas. O objetivo é que toda receita ou despesa esteja vinculada a uma carteira, ou seja, toda a visualização de dados e persistência estão diretamente ligadas à carteira selecionada.
 
-Portanto, toda movimentação de `Receita` ou `Despesa` precisa incluir um `walletID`, que representa a carteira que receberá o registro
+Portanto, toda movimentação de `Receita` ou `Despesa` precisa incluir um `wallet_id`, que representa a carteira que receberá o registro
 
 ## Instruções Primarias
 
 - Para realizar requisições você pode utilizar um cliente como **Insomnia** ou o **Postman**.
 - O Sumário vai ajudar a navegar na documentação.
 - Todos os envios devem serm no formato `json` ou seja `Content-type:application/json`.
+- Todas as requisições necessitam de  ` "Authorization":"Bearer <token_aqui>"` inclua na header da requisição 
 
 ## Sumário
 
