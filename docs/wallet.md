@@ -2,11 +2,9 @@
 
 [Sumário](/README.md)
 
-
 ## `GET: /wallets`
 
 Retorna todas as carteiras para o usuário logado
-
 
 ## Response :
 
@@ -18,37 +16,38 @@ Tipo: `application/json`
 
 ```
 {
-  "wallets": [
+  "data": [
     {
-      "description": "cartão de crédito",
-      "name": "Mercado card - Cartão"
+      "id": 2,
+      "user_id": 1,
+      "name": "minha carteira update",
+      "description": "despesas gerais update",
+      "option_wallet": 0,
+      "created_at": "2023-10-31T16:58:23.000Z",
+      "updated_at": "2023-12-27T08:53:52.000Z"
     },
     {
+      "id": 4,
+      "user_id": 1,
+      "name": "Inter-card",
       "description": "Despesas com cartão",
-      "name": "card-card"
+      "option_wallet": 0,
+      "created_at": "2023-11-06T10:45:55.000Z",
+      "updated_at": null
     },
-    {
-      "description": "cartao",
-      "name": "card-banks"
-    }
-  ]
+
+  ],
+  "message": "",
+  "request": "wallet"
 }
 
 ```
 
-ou
-
-```
-{
-  "data": null,
-  "message": "não encontramos o resgistro "
-}
-
-```
 ## `GET: /wallet/{id}`
 
-Retorna carteira para o id do parametro
+Retorna carteira para o id
 
+## Response :
 
 Você pode obter as seguintes respostas
 
@@ -58,20 +57,17 @@ Tipo: `application/json`
 
 ```
 {
-  "wallet": {
-    "description": "cartão de crédito",
-    "name": "bancoX - Cartão",
-    "option_wallet": 0
-  }
-} 
-
-```
-ou
-
-```
-{
-  "data": null,
-  "message": "não encontramos o resgistro "
+  "data": {
+    "id": 2,
+    "user_id": 1,
+    "name": "minha carteira update",
+    "description": "despesas gerais update",
+    "option_wallet": 0,
+    "created_at": "2023-10-31T16:58:23.000Z",
+    "updated_at": "2023-12-27T08:53:52.000Z"
+  },
+  "message": "",
+  "request": "wallet"
 }
 
 ```
@@ -84,10 +80,9 @@ EXEMPLO :
 
 ```
 {
-  "user_id": "1",
-  "name": "carteira nome",
-  "description": "despesas gerais",
-  "option_wallet": "1 - usar como preferencia  0 - para não preferencia"
+  "name":"minha fatura inter",
+  "description":"controle de despesas do cartao",
+  "option_wallet":"0"
 }
 ```
 
@@ -111,30 +106,34 @@ Code `200` description `ok`
 Tipo: `application/json`
 
 ```
-{ 
-  wallet:{
-  "user_id": "int",
-  "name": "string",
-  "description": "string",
-  "option_wallet": "int"
-  }
-}  
+{
+  "data": {
+    "id": 2,
+    "user_id": 1,
+    "name": "minha carteira update",
+    "description": "despesas gerais update",
+    "option_wallet": 0,
+    "created_at": "2023-10-31T16:58:23.000Z",
+    "updated_at": "2023-12-27T08:53:52.000Z"
+  },
+  "message": "",
+  "request": "wallet"
+}
 
 ```
 
+## `PUT: /wallet`
 
-## `PUT: /wallet/{id}`
-
-Atualiza a carteira com base no id 
+Atualiza a carteira com base no id
 
 EXEMPLO :
 
-``` 
+```
 {
-  "id": "int",
-  "name": "string",
-  "description": "string",
-  "option_wallet": "int"
+  "id" : "2",
+  "name":"minha carteira update",
+  "description":"despesas gerais update",
+  "option_wallet":"0"
 }
 
 ```
@@ -148,25 +147,31 @@ Code `200` description `ok`
 Tipo: `application/json`
 
 ```
-{ 
-  wallet:{
-  "name": "string",
-  "description": "string",
-  "option_wallet": "int"
-  }
-}  
+{
+  "data": {
+    "id": 2,
+    "user_id": 1,
+    "name": "minha carteira update",
+    "description": "despesas gerais update",
+    "option_wallet": 0,
+    "created_at": "2023-10-31T16:58:23.000Z",
+    "updated_at": "2023-12-27T08:53:52.000Z"
+  },
+  "message": "",
+  "request": "wallet"
+}
 
 ```
 
 ## `DELETE: /wallet/{id}`
 
-Remove a carteira 
+Remove a carteira
 
-### ATENÇÃO : TODOS OS REGISTRO VINCULADOS A CARTEIRA TAMBÉM SERÃO REMOVIDOS 
+### ATENÇÃO : TODOS OS REGISTRO VINCULADOS A CARTEIRA TAMBÉM SERÃO REMOVIDOS
 
 EXEMPLO :
 
-``` 
+```
 #ENVIE O ID DA CARTEIRA A SER EXCLUIDA COMO PARAMATRO DA ROTA
 
 "wallet/2"
@@ -182,9 +187,18 @@ Code `200 ` description `ok`
 Tipo: `application/json`
 
 ```
-{ 
-  "message": exclusao realizda,
-  "execute": true
-}  
+{
+  "data": {
+    "id": 43,
+    "user_id": 1,
+    "name": "minha fatura",
+    "description": "constrole de despesas",
+    "option_wallet": 0,
+    "created_at": "2023-12-27T12:14:53.000Z",
+    "updated_at": null
+  },
+  "message": "item removido",
+  "request": "wallet"
+}
 
 ```
