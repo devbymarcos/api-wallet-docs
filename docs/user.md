@@ -2,6 +2,42 @@
 
 [Sumário](/README.md)
 
+## `GET: /user`
+
+Busca o usuário cadastrado baseado no seu id.
+Nesse caso só é necessario o envio do token junto da requisição no cabeçalho
+
+EXEMPLO :
+
+```
+{
+  "Authorizarion": Bearer <seutokenaqui>,
+}
+```
+
+## Response :
+
+Você pode obter as seguintes respostas
+
+Code `200` description `ok`
+
+Tipo: `application/json`
+
+```
+{
+  "data": {
+    "id": 1,
+    "first_name": "Name",
+    "last_name": "LastName",
+    "email": "umemail@seudominio.com",
+    "photo": "default"
+  },
+  "message": "",
+  "request": "user"
+}
+
+```
+
 ## `POST: /user`
 
 Cria um novo usuário
@@ -36,61 +72,30 @@ Tipo: `application/json`
 
 ```
 {
-  "first_name": "string",
-  "last_name": "string",
-  "email": "string",
-  "photo": "string",
-  "token": "string"
+  "data": {
+    "id": 1,
+    "first_name": "Name",
+    "last_name": "LastName",
+    "email": "umemail@seudominio.com",
+    "photo": "default"
+  },
+  "message": "",
+  "request": "user"
 }
-```
-
-## `GET: /user`
-
-Busca o usuário cadastrado baseado no seu id.
-Nesse caso só é necessario o envio do token junto da requisição no cabeçalho
-
-EXEMPLO :
-
-```
-{
-  "Authorizarion": Bearer <seutoken aqui>,
-}
-```
-
-## Response :
-
-Você pode obter as seguintes respostas
-
-Code `200` description `ok`
-
-Tipo: `application/json`
-
-```
-{
-  "id": 1,
-  "first_name": "Pessoa",
-  "last_name": "Sobrenome",
-  "email": "Pessoa@gmail.com",
-  "photo": "default"
-}
-
 ```
 
 ## `PUT: /user`
 
 Atualiza informação do usuário registrado.
-a `password` só vai ser atualizado se voce enviar.
 
 EXEMPLO :
 
 ```
 {
-
   "first_name": "NovoNome",
   "last_name": "NovoSobreNome",
   "email": "NovoEmail@gmail.com",
   "photo": "default"
-  "password": "NovaSenha
 }
 ```
 
@@ -104,11 +109,43 @@ Tipo: `application/json`
 
 ```
 {
-  "id": 1,
-  "first_name": "Pessoa",
-  "last_name": "Sobrenome",
-  "email": "Pessoa@gmail.com",
-  "photo": "default"
+  "data": {
+    "id": 1,
+    "first_name": "Name",
+    "last_name": "LastName",
+    "email": "umemail@seudominio.com",
+    "photo": "default"
+  },
+  "message": "",
+  "request": "user"
+}
+
+```
+
+## `PUT: /userpass`
+
+Atualiza senha do usuario logado.
+
+EXEMPLO :
+
+```
+{
+  "password": "novasenha",
+
+}
+```
+
+## Response :
+
+Se tudo correr bem você tera um `json` com dados atualizados
+
+Code `200` description `ok`
+
+Tipo: `application/json`
+
+```
+{
+  "data": true
 }
 
 ```
